@@ -1,19 +1,10 @@
 package com.example.arefin.registerlistapplication
 
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.arefin.registerlistapplication.models.Candidate
 import kotlinx.android.synthetic.main.activity_register.*
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
-import com.example.arefin.registerlistapplication.Constants.Companion.PREFERENCE_NAME
-import android.R.id.edit
-import android.content.SharedPreferences.Editor
-import com.example.arefin.registerlistapplication.Constants.Companion.LIST_GSON_NAME
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+
 
 
 class RegisterActivity : BaseActivity() {
@@ -23,11 +14,11 @@ class RegisterActivity : BaseActivity() {
         setContentView(R.layout.activity_register)
         setToolbar(R.string.register)
 
-        btn_save.setOnClickListener({
+        btn_save.setOnClickListener {
             if (validationPassed()){
-                saveToModel();
+                saveToModel()
             }
-        })
+        }
     }
 
     private fun saveToModel() {
@@ -43,17 +34,7 @@ class RegisterActivity : BaseActivity() {
     }
 
     private fun saveItem(candidate: Candidate) {
-        val gson = Gson()
-        val preference=this.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
-        val editor = preference.edit()
-        val json = preference.getString(LIST_GSON_NAME, "")
-        var personList: ArrayList<Candidate>? = gson.fromJson(json, object : TypeToken<List<Candidate>>() {}.type)
-        if(personList == null){
-            personList = ArrayList<Candidate>()
-        }
-        personList.add(candidate)
-        editor.putString(LIST_GSON_NAME, gson.toJson(personList))
-        editor.apply()
+        Utils.saveCandidateInSharedPref(this,candidate )
         Toast.makeText(this,getText(R.string.data_saved), Toast.LENGTH_SHORT).show()
         finish()
     }

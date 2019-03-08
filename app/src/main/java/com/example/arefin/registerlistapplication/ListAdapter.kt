@@ -5,11 +5,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.arefin.registerlistapplication.Constants.Companion.gson
 import com.example.arefin.registerlistapplication.models.Candidate
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.candidate_list_item.view.*
 
-class ListAdapter(val userList: ArrayList<Candidate>) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(private val userList: ArrayList<Candidate>) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ViewHolder {
@@ -32,12 +32,11 @@ class ListAdapter(val userList: ArrayList<Candidate>) : RecyclerView.Adapter<Lis
         fun bindItems(candidate: Candidate) {
             itemView.tv_candidate_name.text=candidate.fullName
             itemView.tv_candidate_email.text=candidate.email
-            itemView.setOnClickListener({
+            itemView.setOnClickListener {
                 val myIntent = Intent(itemView.context,CandidateDetailsActivity::class.java)
-                val gson = Gson()
                 myIntent.putExtra(Constants.OBJECT_NAME, gson.toJson(candidate))
                 itemView.context.startActivity(myIntent)
-            })
+            }
         }
     }
 

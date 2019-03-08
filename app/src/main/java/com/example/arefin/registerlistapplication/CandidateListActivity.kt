@@ -24,11 +24,8 @@ class CandidateListActivity : BaseActivity() {
 
 
     private fun setData() {
-        val gson = Gson()
-        val preference=this.getSharedPreferences(Constants.PREFERENCE_NAME, Context.MODE_PRIVATE)
-        val json = preference.getString(Constants.LIST_GSON_NAME, "")
-        val personList: ArrayList<Candidate>? = gson.fromJson(json, object : TypeToken<List<Candidate>>() {}.type)
-        if(personList == null || personList.size ==0 ){
+        val personList = Utils.getListFromSharedPref(this)
+        if( personList!!.size ==0 ){
             tv_no_available_candidates.visibility = View.VISIBLE
         }
         else{

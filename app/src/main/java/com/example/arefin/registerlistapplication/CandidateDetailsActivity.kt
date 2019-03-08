@@ -12,7 +12,7 @@ class CandidateDetailsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_candidate_details)
         setToolbar(R.string.candidate_details)
-        setData();
+        setData()
     }
 
     private fun setData() {
@@ -21,7 +21,7 @@ class CandidateDetailsActivity : BaseActivity() {
             val candidate:Candidate = gson.fromJson(intent.getStringExtra(Constants.OBJECT_NAME),Candidate::class.java)
             tv_can_full_name.text = candidate.fullName
             tv_can_country.text = candidate.countryName
-            tv_candidate_gender.text = if (candidate.male) "Male" else "Female"
+            tv_candidate_gender.text = if (candidate.male) getText(R.string.male) else getText(R.string.female)
             tv_candidate_phone.text = candidate.phoneNumber
             tv_can_email.text = candidate.email
             tv_can_passport_now.text = candidate.passportNumber
