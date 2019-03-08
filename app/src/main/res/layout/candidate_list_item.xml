@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+        card_view:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="@dimen/cardview_corner_margin"
+        card_view:cardElevation="@dimen/smallest_margin"
+
+        card_view:cardUseCompatPadding="true">
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/smallest_margin">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/smallest_margin">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text_size"
+                android:paddingLeft="@dimen/common_overall_margin"
+                android:text="@string/candidate_name"/>
+        <TextView
+                android:id="@+id/tv_candidate_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text_size"
+                android:layout_marginLeft="@dimen/smallest_margin"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text_size"
+                android:paddingLeft="@dimen/common_overall_margin"
+                android:text="@string/candidate_email"/>
+        <TextView
+                android:id="@+id/tv_candidate_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text_size"
+                android:layout_marginLeft="@dimen/smallest_margin"/>
+    </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

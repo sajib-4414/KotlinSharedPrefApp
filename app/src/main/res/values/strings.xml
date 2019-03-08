@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">RegisterListApplication</string>
+    <string name="enter_first_name">Enter your first name</string>
+    <string name="enter_last_name">Enter your last name</string>
+    <string name="enter_your_country">Enter your country name</string>
+    <string name="enter_identification">Enter your NID or Passport number</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="enter_phone_number">Enter your phone number</string>
+    <string name="enter_email">Enter your email address</string>
+    <string name="register_new_account">Register a new candidate</string>
+    <string name="see_registered_candidates_list">See registered candidates</string>
+    <string name="save">Save</string>
+    <string name="candidate_name">Name :</string>
+    <string name="candidate_email">Email:</string>
+    <string name="no_registered_candidates">No registered candidates available</string>
+    <string name="registered_candidates">Registered candidates</string>
+    <string name="dash_board">Dashboard</string>
+    <string name="register">Register</string>
+    <string name="data_saved">Your information has been saved successfully</string>
+    <string name="gender_required">Gender input is required</string>
+    <string name="enter_valid_email">Please enter a valid email address</string>
+    <string name="country">Country :</string>
+    <string name="passport_num">Identification number :</string>
+    <string name="gender">Gender :</string>
+    <string name="contact">Contact number :</string>
+    <string name="email">Email :</string>
+    <string name="candidate_details">Candidate details</string>
+</resources>
