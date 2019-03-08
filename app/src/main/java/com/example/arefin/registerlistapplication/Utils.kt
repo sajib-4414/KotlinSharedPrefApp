@@ -12,7 +12,7 @@ class Utils {
             val json = preference.getString(Constants.LIST_GSON_NAME, "")
             var personList: ArrayList<Candidate>? = gson.fromJson(json, object : TypeToken<List<Candidate>>() {}.type)
             if (personList == null)
-                personList = ArrayList<Candidate>()
+                personList = ArrayList()
             return personList
         }
 

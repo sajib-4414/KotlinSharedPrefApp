@@ -1,14 +1,8 @@
 package com.example.arefin.registerlistapplication
 
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.Toolbar
 import android.view.View
-import com.example.arefin.registerlistapplication.models.Candidate
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_candidate_list.*
 
 class CandidateListActivity : BaseActivity() {

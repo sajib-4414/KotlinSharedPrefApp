@@ -1,6 +1,5 @@
 package com.example.arefin.registerlistapplication
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.arefin.registerlistapplication.models.Candidate
 import com.google.gson.Gson
@@ -18,10 +17,11 @@ class CandidateDetailsActivity : BaseActivity() {
     private fun setData() {
         if (intent !=null){
             val gson = Gson()
-            val candidate:Candidate = gson.fromJson(intent.getStringExtra(Constants.OBJECT_NAME),Candidate::class.java)
-            tv_can_full_name.text = candidate.fullName
+            val candidate: Candidate = gson.fromJson(intent.getStringExtra(Constants.OBJECT_NAME),
+                Candidate::class.java)
+            tv_can_full_name.text = candidate.firstName + " " + candidate.lastName
             tv_can_country.text = candidate.countryName
-            tv_candidate_gender.text = if (candidate.male) getText(R.string.male) else getText(R.string.female)
+            tv_candidate_gender.text = if (candidate.isMale!!) getText(R.string.male) else getText(R.string.female)
             tv_candidate_phone.text = candidate.phoneNumber
             tv_can_email.text = candidate.email
             tv_can_passport_now.text = candidate.passportNumber

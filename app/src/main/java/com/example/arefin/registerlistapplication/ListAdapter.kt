@@ -27,10 +27,10 @@ class ListAdapter(private val userList: ArrayList<Candidate>) : RecyclerView.Ada
         return userList.size
     }
 
-    //the class is hodling the list view
+    //the class is holding the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(candidate: Candidate) {
-            itemView.tv_candidate_name.text=candidate.fullName
+            itemView.tv_candidate_name.text=candidate.firstName + " " + candidate.lastName
             itemView.tv_candidate_email.text=candidate.email
             itemView.setOnClickListener {
                 val myIntent = Intent(itemView.context,CandidateDetailsActivity::class.java)

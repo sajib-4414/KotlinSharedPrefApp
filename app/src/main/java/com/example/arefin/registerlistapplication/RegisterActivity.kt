@@ -29,7 +29,7 @@ class RegisterActivity : BaseActivity() {
         candidate.passportNumber = input_passport_no.text.toString()
         candidate.phoneNumber = input_phone_no.text.toString()
         candidate.email = input_email.text.toString()
-        candidate.male = rd_male.isChecked
+        candidate.isMale = rd_male.isChecked
         saveItem(candidate)
     }
 
